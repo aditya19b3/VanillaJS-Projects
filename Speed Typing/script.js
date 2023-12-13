@@ -2,6 +2,36 @@ const RAMDOM_QUOTE_API_URL = 'http://api.quotable.io/random'
 const quoteDisplayElement = document.getElementById('quoteDisplay')
 const quoteInputElement = document.getElementById('quoteInput')
 const timerElement = document.getElementById('timer')
+const boxElement = document.getElementById('box')
+
+
+
+function theme(){
+    const buttonElement = document.getElementById('modeChange')
+    
+    buttonElement.addEventListener('click', () => {
+        if (buttonElement.innerText === 'Change to Light Mode') {
+            buttonElement.innerText = 'Change to Dark Mode';
+            const modeColor = document.getElementById('body')
+            modeColor.style.backgroundColor = 'transparent'
+            timerElement.style.color = 'grey'
+           // quoteDisplayElement.style.backgroundColorcolor = 'black'
+            boxElement.style.backgroundColor = 'grey'
+            quoteInputElement.style.borderColor = 'black'
+        } 
+        else{
+            //buttonElement.innerText = 'Dark Mode';
+            buttonElement.innerText = 'Change to Light Mode'
+            const modeColor = document.getElementById('body')
+            modeColor.style.backgroundColor = '#1E0555'
+            boxElement.style.backgroundColor = '#F0db4f'
+            timerElement.style.color = '#F0db4f'
+            console.log("Added");
+        }
+    })
+
+}
+
 
 quoteInputElement.addEventListener('input', () => {
     const arrayQuote = quoteDisplayElement.querySelectorAll('span')
@@ -45,6 +75,8 @@ async function renderNewQuote() {
     });
     quoteInputElement.value = null
     startTimer()
+    theme()
+
 }
 
 

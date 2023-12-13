@@ -23,6 +23,28 @@ body, .quote-Input {
     max-width: 90%;
 }
 
+#modeChange {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    border-radius: .5rem;
+}
+
+.mode-change {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: grey;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .mode-change:hover {
+    background-color: #2980b9;
+  }
+
 .timer {
     position: absolute;
     top: 2rem;
@@ -61,4 +83,9 @@ body, .quote-Input {
 .incorrect {
     color: red;
     text-decoration: underline;
+}
+
+.mode-change {
+    border-radius: .5rem;
+
 }
